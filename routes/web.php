@@ -39,7 +39,6 @@ Route::get('/fetch-joke', [DadJokeController::class, 'fetch']);
 
 Route::get('/dad-jokes', [DadJokeController::class, 'show']);
 
-Route::post('/add-comment', [DadJokeController::class, 'addComment']);
 
 Route::get('/dad-jokes', [DadJokeController::class, 'index']);
 Route::post('/dad-jokes', [DadJokeController::class, 'store']);
