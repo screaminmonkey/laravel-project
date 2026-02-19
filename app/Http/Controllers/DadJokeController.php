@@ -38,25 +38,6 @@ class DadJokeController extends Controller
         return redirect('/dad-jokes');
     }
 
-    public function show()
-    {
-        $jokes = DadJoke::latest()->get();
-
-        return view('dad-jokes', compact('jokes'));
-    }
-
-   public function addComment(Request $request) {
-        $incomingFields = $request->validate([
-            'comment' => 'required',
-        ]);
-
-        $incomingFields['comment'] = strip_tags($incomingFields['comment']);
-        $incomingFields['user_id'] = auth()->id();
-
-        DadJoke::create($incomingFields);
-
-        return redirect('/dad-jokes');
-    }
 }
 
 
